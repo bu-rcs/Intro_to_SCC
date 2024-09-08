@@ -10,8 +10,10 @@ To submit a job, execute:
 
 <pre><code>
 [scc1$ ~] <b>qsub python_job.qsub</b>
+Your job 9800289 ("test_py_hello") has been submitted
 </code></pre>
 or 
 <pre><code>
 [scc1$ ~] <b>qsub conda_job.qsub</b>
+Your job 9800290 ("test_conda_hello") has been submitted
 </code></pre>
