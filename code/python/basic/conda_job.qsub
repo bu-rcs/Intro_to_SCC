@@ -1,0 +1,25 @@
+#!/bin/bash -l
+
+# Submit job with the command: qsub job.qsub
+
+# Set the runtime limit (default 12 hours):
+#$ -l h_rt=12:00:00
+
+# Send email when the job is done (default: no email is sent)
+#$ -m e
+
+# Give the job a name (default: script name)
+#$ -N test_py
+
+# Combine output and error streams
+#$-j y
+
+# Load the desired version of Python.
+module load miniconda
+module load academic-ml/fall-2024
+
+# Activate the PyTorch environment:
+conda activate fall-2024-pyt
+
+# Run the Python script.
+python hello.py
