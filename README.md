@@ -11,7 +11,7 @@ The SCC is suitable for high-performance computing in a wide range of discipline
 
 ### Using SCC-OnDemand:
 
-SCC OnDemand is the recommended way to access the BU Shared Computing Cluster (SCC) over the web using a graphical, menu-based environment that doesn’t require using an SSH client. It is particularly well suited to applications like MATLAB, RStudio, and Jupyter Notebook which have a graphical component. Additionally, OnDemand allows you to upload and download files, launch applications, view disk quotas and do many other things on the SCC.
+SCC OnDemand is the recommended way to access the BU Shared Computing Cluster (SCC) over the web using a graphical, menu-based environment that doesn’t require using an SSH client. It is particularly well suited to applications like VSCode, Spyder, RStudio, MATLAB, STATA, and Jupyter Notebook which have a graphical component. Additionally, OnDemand allows you to upload and download files, launch applications and view disk quotas.
 
 To launch OnDemand, go to: [scc-ondemand.bu.edu](https://scc-ondemand.bu.edu/)
 
