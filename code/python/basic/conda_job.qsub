@@ -1,4 +1,4 @@
-o#!/bin/bash -l
+#!/bin/bash -l
 
 # Submit job with the command: qsub job.qsub
 
@@ -22,4 +22,4 @@ module load academic-ml/fall-2024
 conda activate fall-2024-pyt
 
 # Run the Python script.
-python hello.py
+python hello_world.py
