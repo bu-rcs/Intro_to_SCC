@@ -1,4 +1,4 @@
-#!/bin/bash -l
+o#!/bin/bash -l
 
 # Submit job with the command: qsub job.qsub
 
@@ -9,7 +9,7 @@
 #$ -m e
 
 # Give the job a name (default: script name)
-#$ -N test_py
+#$ -N test_conda_hello
 
 # Combine output and error streams
 #$-j y
