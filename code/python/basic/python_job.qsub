@@ -18,4 +18,4 @@
 module load python3/3.10.12
 
 # Run the Python script.
-python hello.py
+python hello_world.py
