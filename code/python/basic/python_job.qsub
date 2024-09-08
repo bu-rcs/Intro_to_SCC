@@ -1,0 +1,21 @@
+#!/bin/bash -l
+
+# Submit job with the command: qsub python_job.qsub
+
+# Set the runtime limit (default 12 hours; maximum - 720 hours):
+#$ -l h_rt=12:00:00
+
+# Send email when the job is done (default: no email is sent)
+#$ -m e
+
+# Give the job a name (default: script name)
+#$ -N test_py_hello
+
+# Combine output and error streams
+#$-j y
+
+# Load the desired version of Python.
+module load python3/3.10.12
+
+# Run the Python script.
+python hello.py
