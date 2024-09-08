@@ -1,5 +1,5 @@
 import sys
-import pkg_resources
+import importlib.metadata
 
 if __name__=='__main__':
     print("Hello World!")
@@ -8,6 +8,4 @@ if __name__=='__main__':
     print("\n\nPython version:\n", sys.version,"\n\n")
     
     # list installed packages
-    installed_packages = pkg_resources.working_set
-    installed_packages_list = sorted(["%s==%s" % (i.key, i.version) for i in installed_packages]) 
-    print(installed_packages_list)
+    print( sorted(x.name for x in importlib.metadata.distributions()) )
