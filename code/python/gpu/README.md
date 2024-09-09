@@ -84,7 +84,7 @@ The following two functions controld the number of threads:
 `set_intra_op_parallelism_threads()`: Set number of threads used within an individual op for parallelism.  
 For more information see [TensorFlow  Documentation](https://www.tensorflow.org/api_docs/python/tf/config/threading).
 
-We recomment using these functions as following:
+We recomment requesting at least 2 CPU cores for Tensorflow and use the above functions as following:
 
 ```
 import os
@@ -96,8 +96,12 @@ def get_n_cores():
         return int(nslots)
     raise ValueError("Environment variable NSLOTS is not defined.")
 
+nthreads = get_n_cores() - 1
+if (nthreads < 1):
+    nthreads = 1
+
 tf.config.threading.set_intra_op_parallelism_threads(1)
-tf.config.threading.set_inter_op_parallelism_threads(get_n_cores())
+tf.config.threading.set_inter_op_parallelism_threads()
 ```
 
 
