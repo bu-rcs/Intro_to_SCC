@@ -18,7 +18,7 @@ If your home directory quota is exceeded 10GB, you can use the `du` command to s
 [scc1$ ~] <b>du -h --max-depth=1</b>
 </code></pre>  
 
-If you find that your `.local` or `.conda`, you probably use your home directory to install Python packages. Read our [Python Documentation](https://www.bu.edu/tech/support/research/software-and-programming/common-languages/python/python-installs/) to learn how to change the location of Python package installation.
+If you find that your `.local` or `.conda` are large, you probably use your home directory to install Python packages. Read our [Python Documentation](https://www.bu.edu/tech/support/research/software-and-programming/common-languages/python/python-installs/) to learn how to change the location of Python package installation.
 
 ## Check your `.bashrc` file 
 
