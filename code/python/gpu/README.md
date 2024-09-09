@@ -61,4 +61,45 @@ tf.debugging.set_log_device_placement(True)
 Do not set visible devices `tf.config.set_visible_devices ` manually. GPUs are assigned to your job by the scheduler
 
 
+## Controlling CPU threads
+
+By default `PyTorch` uses a single CPU process. To enable multiple threads, use `NSLOTS` environment variable that is equal to the number of CPU cores you requested from the batch system:
+
+```
+import os
+import torch
+
+# Tell PyTorch it can use multiple threads.
+# If you are doing parallel data loading be careful
+# as the total num of threads+data loaders can't be
+# greater than n_cores 
+# Get the assigned number of cores 
+n_cores = int(os.environ.get('NSLOTS',1))
+torch.set_num_threads(n_cores)
+```
+
+`Tensorflow` by default will use as many CPU cores as it finds on the compute node (not how many you requested from the batch system). So you must limit it in your code, to prevent your code to be aborted by the *process reaper.*
+The following two functions controld the number of threads:  
+`set_inter_op_parallelism_threads()`: Set number of threads used for parallelism between independent operations.  
+`set_intra_op_parallelism_threads()`: Set number of threads used within an individual op for parallelism.  
+For more information see [TensorFlow  Documentation](https://www.tensorflow.org/api_docs/python/tf/config/threading).
+
+We recomment using these functions as following:
+
+```
+import os
+import tensorflow as tf
+
+def get_n_cores():
+    nslots = os.getenv("NSLOTS")
+    if nslots is not None:
+        return int(nslots)
+    raise ValueError("Environment variable NSLOTS is not defined.")
+
+tf.config.threading.set_intra_op_parallelism_threads(1)
+tf.config.threading.set_inter_op_parallelism_threads(get_n_cores())
+```
+
+
+
 
