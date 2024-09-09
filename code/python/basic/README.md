@@ -17,3 +17,6 @@ or
 [scc1$ ~] <b>qsub conda_job.qsub</b>
 Your job 9800290 ("test_conda_hello") has been submitted
 </code></pre>
+
+When a batch job completes, it generates an output file that has a name of the job and extension as a `*.o<JOB_ID>`.
+This file will contain the messages that usually go to the console output together with warning and error messages (if any).
