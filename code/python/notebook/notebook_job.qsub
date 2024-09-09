@@ -1,0 +1,19 @@
+#!/bin/bash -l 
+
+#$ -l h_rt=12:00:00
+#$ -j y
+#$ -N pytorch_hello_world
+
+# Load required modules
+module load miniconda
+module load academic-ml/fall-2024
+
+# Activate environment
+conda activate fall-2024-pyt
+
+# Run the notebook
+#    The notebook will be saved with a name PyTorch_Hello_World.nbconvert.ipynb
+#    add --inplace   flag if you want the original notebook to be overwritten 
+#    add --output custom-name   if you want to specify an output name for your notebook
+#    add --output-dir /custom/path/   if you want to specify an output directory for your notebook
+jupyter nbconvert --to notebook --execute PyTorch_Hello_World.ipynb
