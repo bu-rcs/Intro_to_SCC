@@ -1,0 +1,36 @@
+#!/bin/bash -l 
+
+# To submit this job, execute: qsub gpu_job.qsub
+
+
+# Request time (default - 12hours, max - 48 hours)
+#$ -l h_rt=12:00:00
+
+# Request a GPU
+#$ -l gpus=1
+
+# Request GPU compute capability
+#$ -l gpu_c=6.5
+
+# Combine output and error streams
+#$ -j y
+
+# Job name
+#$ -N test_gpu_mnist
+
+# Send email at the end of the job
+#$ -m e
+
+# Load modules
+module load miniconda
+module load academic-ml/fall-2024
+
+# Activate the PyTorch environment:
+conda activate fall-2024-pyt
+
+
+# Print values of the CUDA_VISIBLE_DEVICES environment variable
+echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
+
+# Run script
+python mnist.py --cuda
