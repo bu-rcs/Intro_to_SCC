@@ -11,6 +11,15 @@ Name           GB    quota    limit in_doubt    grace |    files    quota    lim
 ktrn      3.72791     10.0     11.0      0.0     none |  115,486  200,000  200,000        0     none
 </code></pre>
 
+If your home directory quota is exceeded 10GB, you can use the `du` command to search for the large files and folders in your home directory:
+
+<pre><code>
+[scc1$ ~] <b>cd</b>
+[scc1$ ~] <b>du -h --max-depth=1</b>
+</code></pre>  
+
+If you find that your `.local` or `.conda`, you probably use your home directory to install Python packages. Read our [Python Documentation](https://www.bu.edu/tech/support/research/software-and-programming/common-languages/python/python-installs/) to learn how to change the location of Python package installation.
+
 ## Check your `.bashrc` file 
 
 Your `.bashrc` file should **NOT** contain `module load` commands or any `conda` - specific commands.
