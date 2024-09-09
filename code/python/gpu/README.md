@@ -10,6 +10,10 @@ To submit a job, execute:
 
 **Note**: Do not change the value of `CUDA_VISIBLE_DEVICES` environment variable. It is set by the batch system when you request GPU resources.
 
+## Requesting additional GPU resources
+
+Check [SCC GPU Documentation](https://www.bu.edu/tech/support/research/software-and-programming/gpu-computing/) pages for more information on various GPU-related resources you can request for your jobs.
+
 
 ## Checking GPU resource usage
 
