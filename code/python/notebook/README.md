@@ -1,4 +1,4 @@
-# Running Notebooks on the Shared Computing Cluster
+# Running Notebooks on the SCC
 
 Python Notebooks can be run interactively or can be submitted as a batch job.
 
