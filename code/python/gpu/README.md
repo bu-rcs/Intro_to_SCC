@@ -29,3 +29,36 @@ Then login to the node and run `nvidia-smi` command:
 [ scc1$gpu ] <b>ssh scc-506</b>
 [ scc1$gpu ] <b>nvidia-smi -l</b>
 </code></pre>
+
+
+## Enabling GPU usage in Pytroch
+
+Use the command `torch.cuda.is_available()` to see if a GPU is available:
+
+```
+import torch
+# Set the device name to cuda when GPU is available, cpu otherwise
+if torch.cuda.is_available():
+    device = torch.device("cuda")
+else:
+    device = torch.device("cpu")
+print("Code is running on :", "CPU" if device.type=="cpu" else "GPU")
+```
+
+## Enabling GPU usage in Tensorflow
+
+If a TensorFlow operation has both `CPU` and `GPU` implementations, by default, the `GPU` device is prioritized when the operation is assigned. For example, `tf.matmul` has both `CPU` and `GPU` kernels and on a system with devices `CPU:0` and `GPU:0`, the `GPU:0` device is selected to run tf.matmul unless you explicitly request to run it on another device.
+
+```
+import tensorflow as tf
+
+# Check if GPUs are available to you:
+print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+
+# Enable debug print statements to view if GPUs are used
+tf.debugging.set_log_device_placement(True)
+```
+Do not set visible devices `tf.config.set_visible_devices ` manually. GPUs are assigned to your job by the scheduler
+
+
+
