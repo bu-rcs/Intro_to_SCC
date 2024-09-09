@@ -8,7 +8,7 @@ To submit a job, execute:
 ```
 
 
-**Note**: Do not change the values of `CUDA_VISIBLE_DEVICES` environment variables. They are set by the batch system when you request GPU resources.
+**Note**: Do not change the value of `CUDA_VISIBLE_DEVICES` environment variable. It is set by the batch system when you request GPU resources.
 
 
 ## Checking GPU resource usage
