@@ -10,7 +10,7 @@
 #$ -l gpus=1
 
 # Request GPU compute capability
-#$ -l gpu_c=6.5
+#$ -l gpu_c=6.0
 
 # Combine output and error streams
 #$ -j y
