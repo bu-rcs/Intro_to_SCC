@@ -88,7 +88,7 @@ The module academic-ml provides a set of conda environments with several differe
 
 First, follow the first two steps outlined in the previous session to set up your `.condarc` file.
 
-Academic ML module comes with 3 environments:
+Academic ML module comes with 3 environments:<br>
 **fall-2024-pyt**  – PyTorch 2.4.0<br>
 **fall-2024-tf**  – Tensorflow 2.17.0<br>
 **fall-2024-jax**  – Jax 0.43.0<br>
