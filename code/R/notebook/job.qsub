@@ -1,6 +1,5 @@
 #!/bin/bash -l
 
-#$-P krcs
 #$-l h_rt=12:00:00
 #$-j y
 #$-N markdown
