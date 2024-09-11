@@ -1,0 +1,16 @@
+#!/bin/bash -l
+
+#$-P krcs
+#$-l h_rt=12:00:00
+#$-j y
+#$-N markdown
+
+module load texlive/2018
+module load pandoc/2.5
+module load R/3.6.0
+
+# The following command will convert the notebook to html
+Rscript -e 'rmarkdown::render("example.Rmd")'
+
+# The following command will convert the notebook to pdf format
+Rscript -e 'rmarkdown::render(input="example.Rmd", output_format="pdf_document",output_file="example.pdf")'
