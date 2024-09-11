@@ -1,0 +1,29 @@
+#!/bin/bash -l
+
+# Submit job with the command: qsub rjob
+
+# Set the runtime limit (default 12 hours):
+#$ -l h_rt=12:00:00
+
+# Send email when the job is done (default: no email is sent)
+#$ -m e
+
+# Give the job a name (default: script name)
+#$ -N r_test
+
+# Join the output and error streams
+#$-j y
+
+## end of qsub options
+
+module load R/4.4.0
+
+Rscript hello.R
+
+# Alternatively, R script could also be run as following:
+#R -q --vanilla < hello.R
+
+
+
+
+
