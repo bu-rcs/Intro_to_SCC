@@ -1,13 +1,12 @@
 #!/bin/bash -l
 
-#$-P krcs
 #$-l h_rt=12:00:00
 #$-j y
 #$-N markdown
 
 module load texlive/2018
 module load pandoc/2.5
-module load R/3.6.0
+module load R/4.4.0
 
 # The following command will convert the notebook to html
 Rscript -e 'rmarkdown::render("example.Rmd")'
