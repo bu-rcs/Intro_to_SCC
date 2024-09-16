@@ -1,2 +1,4 @@
 *.o[0-9]*
 .ipynb_checkpoints
+*.png
+*.out
