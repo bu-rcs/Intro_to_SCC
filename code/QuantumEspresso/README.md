@@ -3,9 +3,16 @@
 
 ## Run Interactively
 
-To run this example interactively, open a Desktop Interactive Session (in SCC OnDemand) and run the following command in the terminal:
+To run this example interactively, open a Desktop Interactive Session (in SCC OnDemand) and select appropriate number of CPU cores.
+Run the following command in the terminal window:
 
 ```
+module load openmpi/4.1.5_gnu-12.2.0
+module load quantumespresso/7.2
+
+export PSEUDO_DIR=$ESPRESSO_PSEUDO
+export BIN_DIR=$SCC_QUANTUMESPRESSO_BIN
+
 ./run_example
 ```
 
