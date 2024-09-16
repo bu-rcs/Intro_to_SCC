@@ -1,4 +1,22 @@
 # Quantum Espresso Example
+
+
+## Run Interactively
+
+To run this example interactively, open a Desktop Interactive Session (in SCC OnDemand) and run the following command in the terminal:
+
+```
+./run_example
+```
+
+## Batch Job
+
+To run this example within a batch job:
+
+```
+qsub job.qsub
+```
+
 ## example01
 
 This example shows how to use pw.x to calculate the total energy
@@ -63,4 +81,5 @@ The above is done both for Davidson diagonalization (suffix
 The code is tolerant about the presence of unnecessary information 
 in the namelists so that it is not necessary to remove them from the 
 input when editing the scf input to get the one for a nscf run.
+
 
